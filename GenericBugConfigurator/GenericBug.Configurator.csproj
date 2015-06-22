@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E0258401-457D-46C8-A431-E4BEA64510A0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GenericBug.Configurator</RootNamespace>
+    <AssemblyName>GenericBug.Configurator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Signing.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomPreviewForm.designer.cs">
+      <DependentUpon>CustomPreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPreview.designer.cs">
+      <DependentUpon>frmPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubmitPanels\Custom\Custom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubmitPanels\Custom\Custom.designer.cs">
+      <DependentUpon>Custom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitPanels\ISubmitPanel.cs" />
+    <Compile Include="SubmitPanels\PanelLoader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubmitPanels\PanelLoader.designer.cs">
+      <DependentUpon>PanelLoader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitPanels\Web\Ftp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubmitPanels\Web\Ftp.designer.cs">
+      <DependentUpon>Ftp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitPanels\Web\Http.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubmitPanels\Web\Http.designer.cs">
+      <DependentUpon>Http.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitPanels\Web\Mail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubmitPanels\Web\Mail.designer.cs">
+      <DependentUpon>Mail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomPreviewForm.resx">
+      <DependentUpon>CustomPreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPreview.resx">
+      <DependentUpon>frmPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SubmitPanels\Custom\Custom.resx">
+      <DependentUpon>Custom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmitPanels\PanelLoader.resx">
+      <DependentUpon>PanelLoader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmitPanels\Web\Ftp.resx">
+      <DependentUpon>Ftp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmitPanels\Web\Http.resx">
+      <DependentUpon>Http.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubmitPanels\Web\Mail.resx">
+      <DependentUpon>Mail.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenericBug\GenericBug.csproj">
+      <Project>{059E12AD-98B8-42A6-A11B-67109B852A5D}</Project>
+      <Name>GenericBug</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

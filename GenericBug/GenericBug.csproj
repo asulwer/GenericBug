@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{059E12AD-98B8-42A6-A11B-67109B852A5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GenericBug</RootNamespace>
+    <AssemblyName>GenericBug</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Signing.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <DocumentationFile>bin\x86\Debug\GenericBug.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Reporting\BugReport.cs" />
+    <Compile Include="Core\Reporting\Info\GeneralInfo.cs" />
+    <Compile Include="Core\Reporting\Info\ModuleVersion.cs" />
+    <Compile Include="Core\Reporting\Info\Report.cs" />
+    <Compile Include="Core\Reporting\MiniDump\DumpTypeFlag.cs" />
+    <Compile Include="Core\Reporting\MiniDump\DumpWriter.cs" />
+    <Compile Include="Core\Reporting\MiniDump\ExceptionFilters.cs" />
+    <Compile Include="Core\Submission\Custom\Custom.cs" />
+    <Compile Include="Core\Submission\Database\Ado.cs" />
+    <Compile Include="Core\Submission\Database\MsSql.cs" />
+    <Compile Include="Core\Submission\Dispatcher.cs" />
+    <Compile Include="Core\Submission\IProtocol.cs" />
+    <Compile Include="Core\Submission\IProtocolFactory.cs" />
+    <Compile Include="Core\Submission\ProtocolBase.cs" />
+    <Compile Include="Core\Submission\Web\Ftp.cs" />
+    <Compile Include="Core\Submission\Web\Http.cs" />
+    <Compile Include="Core\Submission\Web\Mail.cs" />
+    <Compile Include="Core\UI\Console\ConsoleUI.cs" />
+    <Compile Include="Core\UI\Custom\CustomUI.cs" />
+    <Compile Include="Core\UI\Developer\InternalExceptionViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\Developer\InternalExceptionViewer.designer.cs">
+      <DependentUpon>InternalExceptionViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\Developer\InternalLogViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\Developer\InternalLogViewer.designer.cs">
+      <DependentUpon>InternalLogViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\UIDialogResult.cs" />
+    <Compile Include="Core\UI\UISelector.cs" />
+    <Compile Include="Core\UI\Winforms\Full.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\Winforms\Full.designer.cs">
+      <DependentUpon>Full.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\Winforms\Minimal.cs" />
+    <Compile Include="Core\UI\Winforms\Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\Winforms\Normal.designer.cs">
+      <DependentUpon>Normal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\Winforms\Panels\ExceptionDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\UI\Winforms\Panels\ExceptionDetails.designer.cs">
+      <DependentUpon>ExceptionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\Winforms\Panels\ExceptionDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\UI\Winforms\Panels\ExceptionDetailView.designer.cs">
+      <DependentUpon>ExceptionDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UI\Winforms\WinFormsUI.cs" />
+    <Compile Include="Core\UI\WPF\WPFUI.cs" />
+    <Compile Include="Core\Util\ConnectionStringParser.cs" />
+    <Compile Include="Core\Util\Exceptions\GenericBugConfigurationException.cs" />
+    <Compile Include="Core\Util\Exceptions\GenericBugException.cs" />
+    <Compile Include="Core\Util\Exceptions\GenericBugRuntimeException.cs" />
+    <Compile Include="Core\Util\ExceptionThread.cs" />
+    <Compile Include="Core\Util\Logging\Logger.cs" />
+    <Compile Include="Core\Util\ProtectedConfiguration.cs" />
+    <Compile Include="Core\Util\PublicResources.cs" />
+    <Compile Include="Core\Util\Serialization\SerializableException.cs" />
+    <Compile Include="Core\Util\Storage\StoragePath.cs" />
+    <Compile Include="Core\Util\Storage\StoredItemFile.cs" />
+    <Compile Include="Core\Util\Storage\Storer.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\BZip2\BitWriter.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\BZip2\BZip2Compressor.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\BZip2\BZip2InputStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\BZip2\ParallelBZip2OutputStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\BZip2\Rand.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\CRC32.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ComHelper.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\EncryptionAlgorithm.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\Events.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\Exceptions.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ExtractExistingFileAction.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\FileSelector.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\OffsetStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\Shared.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\WinZipAes.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipConstants.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipCrypto.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipDirEntry.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipEntry.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipEntry.Extract.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipEntry.Read.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipEntry.Write.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipEntrySource.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipErrorAction.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.AddUpdate.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.Check.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.Events.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.Extract.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.Read.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.Save.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.SaveSelfExtractor.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.Selector.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipFile.x-IEnumerable.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipInputStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipOutputStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\Zip\ZipSegmentedStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\Deflate.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\DeflateStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\GZipStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\Inflate.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\InfTree.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\ParallelDeflateOutputStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\Tree.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\Zlib.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\ZlibBaseStream.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\ZlibCodec.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\ZlibConstants.cs" />
+    <Compile Include="Core\Util\Storage\ZipStorage\ZLib\ZlibStream.cs" />
+    <Compile Include="Core\Util\Web\StreamUpload.cs" />
+    <Compile Include="Events\CustomSubmissionEventArgs.cs" />
+    <Compile Include="Events\CustomUIEventArgs.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Handler.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Enums\LoggerCategory.cs" />
+    <Compile Include="Enums\MiniDumpType.cs" />
+    <Compile Include="Enums\StoragePath.cs" />
+    <Compile Include="Enums\UIMode.cs" />
+    <Compile Include="Enums\UIProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsCollection\BaseConfigurationElementCollection.cs" />
+    <Compile Include="SettingsCollection\NestedElementCollection.cs" />
+    <Compile Include="SettingsCollection\Element.cs" />
+    <Compile Include="SettingsCollection\SettingsElementCollection.cs" />
+    <Compile Include="SettingsCollection\SettingsSection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Core\UI\Developer\InternalExceptionViewer.resx">
+      <DependentUpon>InternalExceptionViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\Developer\InternalLogViewer.resx">
+      <DependentUpon>InternalLogViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\Winforms\Full.resx">
+      <DependentUpon>Full.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\Winforms\Normal.resx">
+      <DependentUpon>Normal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\Winforms\Panels\ExceptionDetails.resx">
+      <DependentUpon>ExceptionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\UI\Winforms\Panels\ExceptionDetailView.resx">
+      <DependentUpon>ExceptionDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VS2010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_borders.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
